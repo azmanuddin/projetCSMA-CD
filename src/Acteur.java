@@ -56,6 +56,11 @@ public class Acteur {
         }
     }
 
+
+    public void newMethod() {
+        //method stuff here
+    }
+
     public ArrayList<Trame> getTrames() {
         return trames;
     }
