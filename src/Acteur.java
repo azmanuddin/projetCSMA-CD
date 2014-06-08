@@ -57,15 +57,7 @@ public class Acteur {
     }
 
 
-    public int calculerTransmission(int taille, int longueurCable) {
-        return 0;
-    }
 
-    
-
-    public void newMethod() {
-        //method stuff here
-    }
 
     public ArrayList<Trame> getTrames() {
         return trames;
