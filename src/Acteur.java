@@ -26,6 +26,9 @@ public class Acteur {
         return nomAct;
     }
 
+    /*
+        Calcul le découpage d'un fichier en plusieurs trames à envoyer.
+     */
     public void envoyerFichier(int tailleFichier, Acteur destination ) {
 
         tailleFichier = tailleFichier * kOctets;
