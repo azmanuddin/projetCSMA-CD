@@ -28,5 +28,7 @@ public class TestActeur {
 
         System.out.println("Nom cable = "+ s1.getNomSupport()+"  Debit = "+s1.getDebit()+ "  Longeur = "+s1.getLongueur()+"metere");
 
+
+        System.out.println(a.getRandomNum());
     }
 }

@@ -13,7 +13,7 @@ public class Acteur {
     public ArrayList<Trame> trames;
     private ArrayList<Float> floats;
     private Support support;
-
+    public int randomNum = 0 + (int)(Math.random()*8);
 
     public Acteur(String nomAct) {
         this.nomAct = nomAct;
@@ -69,6 +69,15 @@ public class Acteur {
 
     }
 
+    public int setRandomNum(int randomNum){
+        this.randomNum =randomNum;
+        return randomNum;
+
+    }
+
+    public int getRandomNum() {
+        return randomNum;
+    }
 }
 
 
