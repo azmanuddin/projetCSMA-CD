@@ -8,18 +8,29 @@ public class Support {
     public String nomSupport;
     private long debit;
     private long longueur;
-    private ArrayList<Acteur> acteurs = new ArrayList<Acteur>();
+    //private ArrayList<Acteur> acteurs = new ArrayList<Acteur>();
 
-    public Support(String nomSupport) {
+    public Support(String nomSupport,long debit ,long longueur) {
         this.nomSupport = nomSupport;
+        this.debit = debit;
+        this.longueur = longueur;
     }
 
 
     public String getNomSupport() {
+
         return nomSupport;
     }
 
-    public void ajouterActeur(Acteur acteur){
-        acteurs.add(acteur);
+    public long getDebit() {
+        return debit;
     }
+
+    public long getLongueur() {
+        return longueur;
+    }
+
+    /*public void ajouterActeur(Acteur acteur){
+        acteurs.add(acteur);
+    }*/
 }
