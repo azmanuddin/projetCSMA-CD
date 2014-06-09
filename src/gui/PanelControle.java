@@ -56,6 +56,10 @@ public class PanelControle extends JPanel{
     JTextField momentText = new JTextField();
     JButton programmerEnvoieButton = new JButton("Programmer l'envoie");
     //endregion
+
+    //region JLabel, JTextField et JButton pour lancer la simulation
+    JButton lancerSimulationButton = new JButton("Lancer simulation");
+    //endregion
     //endregion
 
     public PanelControle(ActionListener listener){
@@ -69,10 +73,12 @@ public class PanelControle extends JPanel{
         ajouterSupportButton.addActionListener(listener);
         programmerEnvoieButton.addActionListener(listener);
         setDebitInterconnecteurButton.addActionListener(listener);
+        lancerSimulationButton.addActionListener(listener);
 
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.anchor = GridBagConstraints.WEST;
         gbc.gridheight = 1;
+        gbc.fill = GridBagConstraints.HORIZONTAL;
 
         gbc.gridy = 0; gbc.gridx = 0; gbc.gridwidth = 4;
         definirDebitInterconnecteurLabel.setFont(new Font("Arial", Font.BOLD, 16));
@@ -171,5 +177,8 @@ public class PanelControle extends JPanel{
 
         gbc.gridy = 20; gbc.gridx = 0; gbc.gridwidth = 4;
         add(programmerEnvoieButton, gbc);
+
+        gbc.gridy = 21; gbc.gridx = 0; gbc.gridwidth = 4;
+        add(lancerSimulationButton, gbc);
     }
 }

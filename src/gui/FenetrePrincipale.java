@@ -29,6 +29,7 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
 
         pack();
         setVisible(true);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
 
     @Override
@@ -48,6 +49,14 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
         else if(e.getSource().equals(controle.programmerEnvoieButton)) {
             programmerEnvoie();
         }
+
+        else if(e.getSource().equals(controle.lancerSimulationButton)) {
+            lancerSimulation();
+        }
+    }
+
+    private void lancerSimulation() {
+        JOptionPane.showMessageDialog(this, "Cette fonctionnalité n'est pas encore implémentée", "Erreur", JOptionPane.ERROR_MESSAGE);
     }
 
     private void ajouterActeur() {
