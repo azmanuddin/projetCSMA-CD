@@ -1,5 +1,7 @@
 package gui;
 
+import ayam.AyamBetul;
+import ayam.AyamListener;
 import main.Simulation;
 import model.Acteur;
 
@@ -16,11 +18,13 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
     private Simulation simulation;
     private PanelControle controle = new PanelControle(this);
     private PanelConsole console = new PanelConsole();
+    private AyamBetul ayam = new AyamBetul();
 
     public FenetrePrincipale(Simulation simulation) {
         super("Simulation CSMA/CD");
         this.simulation = simulation;
         simulation.getReseau().setListener(console);    //utk ambik maklumat reseau ke dalamconsole
+        simulation.getReseau().setPendengar(ayam);
 
 
         setLayout(new BorderLayout());

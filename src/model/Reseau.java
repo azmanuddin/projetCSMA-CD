@@ -1,5 +1,6 @@
 package model;
 
+import ayam.AyamListener;
 import gui.ReseauListener;
 
 import java.util.ArrayList;
@@ -14,6 +15,7 @@ public class Reseau {
     private ArrayList<Support> supports;
 
     private ReseauListener listener;
+    private AyamListener pendengar;
 
     /*
         Constructeurs
@@ -52,6 +54,7 @@ public class Reseau {
         System.out.println(message);
 
         listener.onEvent(message);
+        pendengar.berkokok();
     }
 
     /*
@@ -92,5 +95,9 @@ public class Reseau {
 
     public void setListener(ReseauListener listener) {
         this.listener = listener;
+    }
+
+    public void setPendengar(AyamListener pendengar) {
+        this.pendengar = pendengar;
     }
 }
