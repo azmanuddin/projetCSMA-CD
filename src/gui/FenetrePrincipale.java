@@ -18,7 +18,10 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
     private Simulation simulation;
     private PanelControle controle = new PanelControle(this);
     private PanelConsole console = new PanelConsole();
+
+    private PanelGui gui = new PanelGui();
     private AyamBetul ayam = new AyamBetul();
+
 
     public FenetrePrincipale(Simulation simulation) {
         super("Simulation CSMA/CD");
@@ -30,7 +33,8 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
         setLayout(new BorderLayout());
 
         add(controle, BorderLayout.WEST);
-        add(console, BorderLayout.EAST);
+        add(console, BorderLayout.CENTER);
+        add(gui, BorderLayout.EAST);
 
         pack();
         setVisible(true);
@@ -41,10 +45,12 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if(e.getSource().equals(controle.ajouterActeurButton)) {
             ajouterActeur();
+            gui.add(new MyDraggableComponent(null));
         }
 
         else if(e.getSource().equals(controle.ajouterSupportButton)) {
             ajouterSupport();
+
         }
 
         else if(e.getSource().equals(controle.setDebitInterconnecteurButton)) {

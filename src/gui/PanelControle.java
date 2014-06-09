@@ -15,6 +15,9 @@ public class PanelControle extends JPanel{
     //region user interface components
     //region JLabel, JTextField et JButton pour l'ajout d'un acteur
 
+    /*String textToPutForAjouterActeurLabel = "Ajouter un acteur";
+    JLabel ajouterActeurLabel = new JLabel(textToPutForAjouterActeurLabel);*/
+
     JLabel ajouterActeurLabel = new JLabel("Ajouter un acteur");
     JLabel nomActeurLabel = new JLabel("Nom de l'acteur");
     JTextField nomActeurText = new JTextField();
