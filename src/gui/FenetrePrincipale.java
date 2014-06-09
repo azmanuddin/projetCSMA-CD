@@ -20,7 +20,8 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
     public FenetrePrincipale(Simulation simulation) {
         super("Simulation CSMA/CD");
         this.simulation = simulation;
-        simulation.getReseau().setListener(console);
+        simulation.getReseau().setListener(console);    //utk ambik maklumat reseau ke dalamconsole
+
 
         setLayout(new BorderLayout());
 
@@ -29,7 +30,7 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
 
         pack();
         setVisible(true);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);       //supprimer les donnes enregistré
     }
 
     @Override
