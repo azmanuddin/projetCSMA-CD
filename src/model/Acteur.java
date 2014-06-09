@@ -55,14 +55,18 @@ public class Acteur {
             }
 
             listener.onEvent("L'acteur " + nomAct + " va envoyer " + nbTrames + " trames, dont " + nbTramesPleins
-                            +" trames pleins à l'acteur " + destination.nomAct );
+                    +" trames pleins à l'acteur " + destination.nomAct );
         }
+
+
 
         else {
             nbTrames = 1;
             if (tailleFichier < 46) tailleFichier = 46;
             double tTrans = ((tailleFichier + tailleDonneesDeControle) * 8 / (double) support.getDebit());
             trames.add(new Trame(tailleFichier + tailleDonneesDeControle, this, destination).setTempsTrans(tTrans).setId(1));
+
+            listener.onEvent("L'acteur " + nomAct + " va envoyer " + nbTrames + " trames " + destination.nomAct );
         }
 
         return nbTrames;

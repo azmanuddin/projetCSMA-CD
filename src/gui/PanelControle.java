@@ -30,7 +30,7 @@ public class PanelControle extends JPanel{
     JTextField nomActeurConnecteText = new JTextField();
     JLabel longueurLabel = new JLabel("Longueur du support");
     JTextField longueurText = new JTextField();
-    JLabel debitSupportLabel = new JLabel("Débit du support");
+    JLabel debitSupportLabel = new JLabel("Débit du support (bit/s)");
     JTextField debitSupportText = new JTextField();
     JButton ajouterSupportButton = new JButton("Ajouter support");
     //endregion
@@ -38,7 +38,7 @@ public class PanelControle extends JPanel{
     //region JLabel, JTextField et JButton pour définir le débit de l'interconnecteur
 
     JLabel definirDebitInterconnecteurLabel = new JLabel("Définir le débit de l'interconnecteur");
-    JLabel debitInterconnecteurLabel = new JLabel("Débit interconnecteur");
+    JLabel debitInterconnecteurLabel = new JLabel("Débit interconnecteur (bit/s)");
     JTextField debitInterconnecteurText = new JTextField();
     JButton setDebitInterconnecteurButton = new JButton("Définir débit");
     //endregion
@@ -50,9 +50,9 @@ public class PanelControle extends JPanel{
     JTextField sourceText = new JTextField();
     JLabel destinationLabel = new JLabel("Nom de l'acteur destination");
     JTextField destinationText = new JTextField();
-    JLabel tailleFichierLabel = new JLabel("Taille du fichier");
+    JLabel tailleFichierLabel = new JLabel("Taille du fichier [en Koctet(s)]");
     JTextField tailleFichierText = new JTextField();
-    JLabel momentLabel = new JLabel("Moment d'envoie");
+    JLabel momentLabel = new JLabel("Moment d'envoie (ms)");
     JTextField momentText = new JTextField();
     JButton programmerEnvoieButton = new JButton("Programmer l'envoie");
     //endregion
