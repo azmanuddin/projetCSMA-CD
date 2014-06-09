@@ -28,7 +28,7 @@ public class PanelControle extends JPanel{
     JTextField nomSupportText = new JTextField();
     JLabel nomActeurConnecteLabel = new JLabel("Nom de l'acteur connecté");
     JTextField nomActeurConnecteText = new JTextField();
-    JLabel longueurLabel = new JLabel("Longueur du support");
+    JLabel longueurLabel = new JLabel("Longueur du support (m)");
     JTextField longueurText = new JTextField();
     JLabel debitSupportLabel = new JLabel("Débit du support (bit/s)");
     JTextField debitSupportText = new JTextField();
