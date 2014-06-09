@@ -73,7 +73,6 @@ public class PanelControle extends JPanel{
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.anchor = GridBagConstraints.WEST;
         gbc.gridheight = 1;
-        gbc.fill = GridBagConstraints.HORIZONTAL;
 
         gbc.gridy = 0; gbc.gridx = 0; gbc.gridwidth = 4;
         definirDebitInterconnecteurLabel.setFont(new Font("Arial", Font.BOLD, 16));
