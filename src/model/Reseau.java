@@ -1,5 +1,7 @@
 package model;
 
+import gui.ReseauListener;
+
 import java.util.ArrayList;
 
 /**
@@ -11,11 +13,13 @@ public class Reseau {
     private Interconnecteur interconnecteur;
     private ArrayList<Support> supports;
 
+    private ReseauListener listener;
+
     /*
         Constructeurs
      */
 
-    public Reseau(int nbActeur) {
+    public Reseau() {
         interconnecteur = new Interconnecteur();
         acteurs = new ArrayList<Acteur>();
     }
@@ -25,11 +29,14 @@ public class Reseau {
      */
     public void setDebitInterconnecteur(long debit) {
         interconnecteur.setDebit(debit);
+        listener.onEvent("Le débit de l'interconnecteur est " + debit);
     }
 
     public Acteur ajouterActeur(String nom) {
         Acteur acteur = new Acteur(nom);
         acteurs.add(acteur);
+        acteur.setListener(listener);
+        listener.onEvent("L'acteur " + nom + " a été créé");
         return acteur;
     }
 
@@ -38,10 +45,13 @@ public class Reseau {
         acteurs.get(acteurs.indexOf(acteur)).setSupport(support);
         interconnecteur.ajouterSupport(support);
 
-        System.out.println("\nUne connexion est établie entre l'acteur "
-                           + acteur.getNomAct() + " et l'interconnecteur "
-                           + "par le support " + nomSupport + " de débit "
-                           + debit + " et de longueur " + longueur);
+        String message = "Une connexion est établie entre l'acteur "
+                        + acteur.getNomAct() + " et l'interconnecteur "
+                        + "par le support " + nomSupport + " de débit "
+                        + debit + " et de longueur " + longueur;
+        System.out.println(message);
+
+        listener.onEvent(message);
     }
 
     /*
@@ -51,8 +61,11 @@ public class Reseau {
     public void programmerEnvoieDeFichier(Acteur source, Acteur destination, int tailleFichier, double moment) {
         source.decouperFichier(tailleFichier, destination);
         source.setTempsEnvoie(moment);
-        System.out.println("Envoie de fichier de taille " + tailleFichier + " depuis "+ source.getNomAct()
-                         + " à " + destination.getNomAct() + " à t = " + moment +"\n" );
+        String message =  "Envoie de fichier de taille " + tailleFichier + " depuis l'acteur "+ source.getNomAct()
+                        + " à l'acteur " + destination.getNomAct() + " à t = " + moment +" a été programmé";
+        System.out.println(message);
+
+        listener.onEvent(message);
     }
 
     public void commencerEnvoieDeFichier() {
@@ -75,5 +88,9 @@ public class Reseau {
         }
 
         return null;
+    }
+
+    public void setListener(ReseauListener listener) {
+        this.listener = listener;
     }
 }

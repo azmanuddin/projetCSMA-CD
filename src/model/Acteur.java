@@ -1,5 +1,7 @@
 package model;
 
+import gui.ReseauListener;
+
 import java.util.ArrayList;
 
 /**
@@ -15,6 +17,7 @@ public class Acteur {
     private double tempsEnvoie;
     private ArrayList<Trame> trames;
     private Support support;
+    private ReseauListener listener;
 
     public Acteur(String nomAct) {
         this.nomAct = nomAct;
@@ -50,6 +53,9 @@ public class Acteur {
                 tTransReste = ((reste + tailleDonneesDeControle) * 8 / (double) support.getDebit());
                 trames.add(new Trame(reste + tailleDonneesDeControle, this, destination).setTempsTrans(tTransReste).setId(i++));
             }
+
+            listener.onEvent("L'acteur " + nomAct + " va envoyer " + nbTrames + " trames, dont " + nbTramesPleins
+                            +" trames pleins à l'acteur " + destination.nomAct );
         }
 
         else {
@@ -81,6 +87,8 @@ public class Acteur {
     public void setTempsEnvoie(double tempsEnvoie) { this.tempsEnvoie = tempsEnvoie; }
 
     public void setSupport(Support support){ this.support = support; }
+
+    public void setListener(ReseauListener listener) { this.listener = listener; }
 }
 
 
