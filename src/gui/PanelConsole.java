@@ -14,7 +14,11 @@ public class PanelConsole extends JPanel implements ReseauListener{
         text.setPreferredSize(new Dimension(400, 700));
         text.setLineWrap(true);
         add(new JScrollPane(text));
+
+
     }
+
+
 
     @Override
     public void onEvent(String message) {

@@ -65,11 +65,18 @@ public class Reseau {
     public void programmerEnvoieDeFichier(Acteur source, Acteur destination, int tailleFichier, double moment) {
         source.decouperFichier(tailleFichier, destination);
         source.setTempsEnvoie(moment);
-        String message =  "Envoie de fichier de taille " + tailleFichier + " depuis l'acteur "+ source.getNomAct()
+        String message =  "Envoie de fichier de taille " + tailleFichier + "Koctet(s) depuis l'acteur "+ source.getNomAct()
                         + " à l'acteur " + destination.getNomAct() + " à t = " + moment +" a été programmé";
         System.out.println(message);
+        for (Trame t : source.getTrames()) {
+            String message2 = source.getNomAct() + t.getId() + " " + t.getTaille() + "octet(s)" + " avec le temps de transmission de "
+                    + t.getTempsTrans() + "s";
+            System.out.println(message2);
+            listener.onEvent(message2);
+        }
 
         listener.onEvent(message);
+
     }
 
     public void commencerEnvoieDeFichier() {
