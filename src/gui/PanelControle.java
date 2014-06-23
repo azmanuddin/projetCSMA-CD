@@ -27,8 +27,9 @@ public class PanelControle extends JPanel{
     //region JLabel, JTextField et JButton pour l'ajout d'un support
 
     JLabel ajouterSupportLabel = new JLabel("Ajouter un support");
-    JLabel nomSupportLabel = new JLabel("Nom du support");
-    JTextField nomSupportText = new JTextField();
+    JLabel nomDeSupport = new JLabel("Type de support");
+    String[] nomSupportLabel = { "Coaxial", "Fibre Optic", "RJ45", "Droit" };
+    JComboBox nomSupportText = new JComboBox(nomSupportLabel);
     JLabel nomActeurConnecteLabel = new JLabel("Nom de l'acteur connecté");
     JTextField nomActeurConnecteText = new JTextField();
     JLabel longueurLabel = new JLabel("Longueur du support (m)");
@@ -116,10 +117,10 @@ public class PanelControle extends JPanel{
         add(ajouterSupportLabel, gbc);
 
         gbc.gridy = 9; gbc.gridx = 0; gbc.gridwidth = 2; gbc.insets = new Insets(0, 0, 0, 0);
-        add(nomSupportLabel, gbc);
+        add(nomDeSupport, gbc);
 
         gbc.gridy = 9; gbc.gridx = 2; gbc.gridwidth = 2;
-        nomSupportText.setColumns(15);
+        nomSupportText.setVisible(true);
         add(nomSupportText, gbc);
 
         gbc.gridy = 10; gbc.gridx = 0; gbc.gridwidth = 2;
@@ -184,4 +185,8 @@ public class PanelControle extends JPanel{
         gbc.gridy = 21; gbc.gridx = 0; gbc.gridwidth = 4;
         add(lancerSimulationButton, gbc);
     }
+
+
+
+
 }

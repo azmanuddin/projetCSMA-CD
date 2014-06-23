@@ -3,6 +3,7 @@ package model;
 import ayam.AyamListener;
 import gui.ReseauListener;
 
+import javax.swing.*;
 import java.util.ArrayList;
 
 /**
@@ -42,7 +43,7 @@ public class Reseau {
         return acteur;
     }
 
-    public void ajouterConnexion(Acteur acteur, String nomSupport, long debit, long longueur) {
+    public void ajouterConnexion(Acteur acteur, JComboBox nomSupport, long debit, long longueur) {
         Support support = new Support(nomSupport, debit, longueur);
         acteurs.get(acteurs.indexOf(acteur)).setSupport(support);
         interconnecteur.ajouterSupport(support);

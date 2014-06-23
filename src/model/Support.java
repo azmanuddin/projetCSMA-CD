@@ -1,5 +1,6 @@
 package model;
 
+import javax.swing.*;
 import java.util.ArrayList;
 
 /**
@@ -7,17 +8,18 @@ import java.util.ArrayList;
  */
 public class Support {
 
-    public String nomSupport;
+    public JComboBox nomSupport;
     private long debit;
     private long longueur;
     private ArrayList<Trame> trames;
 
-    public Support(String nomSupport,long debit ,long longueur) {
+    public Support(JComboBox nomSupport,long debit ,long longueur) {
         this.nomSupport = nomSupport;
         this.debit = debit;
         this.longueur = longueur;
         trames = new ArrayList<Trame>();
     }
+
 
     public int accepterTrame(Trame trame) {
         trames.add(trame);
@@ -25,7 +27,7 @@ public class Support {
     }
 
 
-    public String getNomSupport() { return nomSupport; }
+    public JComboBox getNomSupport() {return nomSupport;}
 
     public long getDebit() { return debit; }
 

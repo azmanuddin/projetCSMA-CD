@@ -83,7 +83,7 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
 
     private void ajouterSupport() {
         String nomActeur = controle.nomActeurConnecteText.getText();
-        String nomSupport = controle.nomSupportText.getText();
+        JComboBox nomSupport = (JComboBox) controle.nomSupportText.getSelectedItem();
         String textDebit = controle.debitSupportText.getText();
         String textLongueur = controle.longueurText.getText();
         if(!textDebit.equals("") && !textLongueur.equals("")) {
